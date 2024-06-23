@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Notable&display=swap");
+
+:root {
+  --color-container: #0d1b2a;
+  --color-panel: #1b263b;
+  --color-button: #415a77;
+  --text-color-1: white;
+  --color-correct: #2a9d8f;
+  --color-wrong: #f4a261;
+  --color-react: #00cff8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-container);
+}
+
+.panel {
+  height: 85%;
+  width: 60%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: var(--color-panel);
+  color: var(--text-color-1);
+}
+
+.nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+
+  /* font-family: "Abril Fatface", serif; */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-react);
+  text-transform: uppercase;
+  word-spacing: 0.4rem;
+  letter-spacing: 0.2rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+hr {
+  margin-top: 1rem;
+  width: 80%;
+  color: white;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c: no-repeat radial-gradient(farthest-side, white 92%, #0000);
+  background: var(--_c) top, var(--_c) left, var(--_c) right, var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+}
+@keyframes l7 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+.quiz {
+  padding-top: 2rem;
+  width: 60%;
+}
+
+.error {
+  background-color: gray;
+  width: 300px;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.welcome {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.welcome h1,
+h2 {
+  padding: 1rem;
+}
+
+.btn-start {
+  background-color: var(--color-button);
+  color: #fff;
+  padding: 1rem;
+  margin: 2rem 0;
+  width: 10rem;
+  border-color: lightblue;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  display: block;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--color-button);
+  background-color: var(--color-button);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+
+.btn:not([disabled]):hover {
+  background-color: #778da9;
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-option {
+  width: 100%;
+  text-align: left;
+}
+
+.btn-option.correct {
+  background-color: var(--color-correct);
+  border: 1px solid var(--color-correct);
+  color: white;
+}
+.btn-option.wrong {
+  background-color: var(--color-wrong);
+  border: 1px solid var(--color-wrong);
+  color: #1b263b;
+}
+
+.answer {
+  transform: translateX(2rem);
+}
+
+.btn-ui {
+  float: right;
+  margin: 0rem;
+  padding: 1rem;
+  width: 10rem;
+}
+
+.progress {
+  margin-bottom: 1rem;
+  display: grid;
+  justify-content: space-between;
+  /* gap: 1.2rem; */
+  grid-template-columns: auto auto;
+  font-size: 1rem;
+  color: white;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  grid-column: 1 / -1;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 100px;
+}
+::-webkit-progress-value {
+  background-color: var(--color-react);
+  border-radius: 100px;
+}
+
+.result {
+  background-color: var(--color-react);
+  color: var(--color-light);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.result span {
+  font-size: 2.2rem;
+  margin-right: 4px;
+}
+
+.highscore {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.restart {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  float: left;
+  font-size: 1rem;
+  color: darkgray;
+  border: 0.1rem solid lightgrey;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+}
